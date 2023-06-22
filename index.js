@@ -8,7 +8,7 @@ connectDB();
 
 import { User } from "./userschema.js";
 app.post("/register",async(req,res)=>{
-    const {name,email,password} = req.body;
+    const {usertype,name,email,password} = req.body;
     if(!email||!password){
        res.json({
         message:"please add all fields"
@@ -21,7 +21,7 @@ app.post("/register",async(req,res)=>{
         })
     }
     user = await User.create({
-        name,email,password
+        usertype,name,email,password
     })
     res.status(201).json({
         success:true,
