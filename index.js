@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
       // Compare the provided password with the stored password
       if (password === user.password) {
         // Return a success message
-        res.json({ message: `${user.name} Login successful`,user});
+        res.json({ message: `${user.usertype}, ${user.name} Login successful`,user});
       } else {
         res.status(401).json({ message: 'Invalid password' });
       }
